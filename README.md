@@ -24,28 +24,18 @@ watch the Dashboard catch anomalies in real time.
 
 The **Analytics** page shows historical quality analytics across all 3 datasets.
 
-## Gemini API key
+## Local AI Reasoning (Ollama)
 
-Paste your Gemini API key into the sidebar on the Dashboard page. It's only
-needed for batches the ML model flags as high risk — low-risk batches never
-trigger an LLM call.
+This project is built for **100% local execution** using Ollama to ensure data privacy and operational security. Low-risk batches are handled purely by the ML model; high-risk batches are routed to the local LLM.
 
-```bash
-export GEMINI_API_KEY="your-key-here"
-streamlit run app.py
-```
-
-### Using Ollama (local LLM) instead
-
-You can switch to a local Ollama instance with llama3.2:3b in the sidebar.
-Make sure Ollama is running locally first:
+Make sure Ollama is installed and running locally:
 
 ```bash
 ollama pull llama3.2:3b
 ollama serve
 ```
 
-Then select "Ollama (Local)" in the Dashboard sidebar.
+*(Note: The `llm_client.py` file also contains a backup configuration for the TCS GenAI Lab endpoint, but Ollama is the active default).*
 
 ## Datasets (3-dataset flow)
 
@@ -109,6 +99,7 @@ app.py                          # Streamlit dashboard (main entrypoint)
 pages/
   1_Producer.py                  # simulates the live MES feed
   2_Analytics.py                  # quality analytics from defects_data.csv
+  3_Metrics.py                    # Success metrics, prediction accuracy & ROI
 graph.py                         # LangGraph pipeline: preprocess -> ML score -> guardrails -> LLM -> alert
 train_model.py                    # trains the Random Forest on ai4i2020.csv
 generate_dataset.py                # generates all synthetic datasets

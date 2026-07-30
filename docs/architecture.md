@@ -55,7 +55,16 @@ This project has been upgraded to follow the industry-standard AI4I 2020 Predict
 
 ---
 
-## 2. Ingestion gateway
+## 2. Privacy & Operational Security
+
+The system architecture addresses the critical requirement for **operational data security and privacy**:
+1. **Synthetic Data for Development:** We generated synthetic data matching the AI4I2020 statistical properties to ensure no real proprietary manufacturing data is exposed during the hackathon or testing.
+2. **Local AI Execution:** By default, the LLM reasoning agent uses **Ollama** running locally. This ensures that sensitive manufacturing telemetry, machine IDs, and product types never leave the corporate network.
+3. **Guardrails as Firewalls:** The input relevancy guardrail ensures that only whitelisted telemetry structures are processed, preventing prompt injection or unauthorized data exfiltration through the AI node.
+
+---
+
+## 3. Ingestion gateway
 
 A thin service that polls/receives from the simulated MES feed (`live_queue.csv`), validates the incoming schema (correct fields, correct types, batch ID present), and rejects or quarantines malformed payloads before they enter the pipeline. This is the platform's first line of defense against bad data reaching the model or the LLM.
 

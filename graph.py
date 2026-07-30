@@ -41,7 +41,8 @@ ENGINEERED_FEATURES = [
 ALL_FEATURES = RAW_FEATURES + ENGINEERED_FEATURES
 
 # Anything scoring at or above this is routed to the LLM reasoning node.
-RISK_THRESHOLD = 0.5
+def get_risk_threshold():
+    return float(os.environ.get("RISK_THRESHOLD", 0.5))
 
 with open(os.path.join(BASE_DIR, "data", "spec_limits.json")) as f:
     SPEC_LIMITS = json.load(f)
@@ -134,7 +135,7 @@ def risk_scoring_node(state: dict) -> dict:
 # ---------------------------------------------------------------------------
 
 def route_after_scoring(state: dict) -> str:
-    return "reason" if state["risk_score"] >= RISK_THRESHOLD else "skip"
+    return "reason" if state["risk_score"] >= get_risk_threshold() else "skip"
 
 
 # ---------------------------------------------------------------------------
@@ -288,7 +289,7 @@ OSF_THRESHOLDS = {"L": 11000, "M": 12000, "H": 13000}
 def format_alert_node(state: dict) -> dict:
     row = state["batch"]
     risk_score = state["risk_score"]
-    risk_level = "High" if risk_score >= 0.75 else "Medium" if risk_score >= RISK_THRESHOLD else "Low"
+    risk_level = "High" if risk_score >= 0.75 else "Medium" if risk_score >= get_risk_threshold() else "Low"
     reasoning = state["reasoning"] or {}
 
     state["alert"] = {

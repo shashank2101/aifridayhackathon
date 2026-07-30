@@ -120,15 +120,32 @@ def main():
         bar = "█" * int(imp * 50)
         print(f"  {feat:28s} {imp:.4f}  {bar}")
 
-    # Save
+    # Save model + artifacts
     os.makedirs("model", exist_ok=True)
     joblib.dump(model, "model/risk_model.joblib")
     with open("model/feature_importance.json", "w") as f:
         json.dump(importances, f, indent=2)
 
+    # Save metrics for the dashboard
+    cm = confusion_matrix(y_test, y_pred).tolist()
+    metrics = {
+        "accuracy": round(accuracy_score(y_test, y_pred), 4),
+        "precision": round(precision_score(y_test, y_pred), 4),
+        "recall": round(recall_score(y_test, y_pred), 4),
+        "f1": round(f1_score(y_test, y_pred), 4),
+        "confusion_matrix": cm,
+        "test_size": len(y_test),
+        "train_size": len(y_train),
+        "n_features": len(ALL_FEATURES),
+        "feature_importance": importances,
+    }
+    with open("model/metrics.json", "w") as f:
+        json.dump(metrics, f, indent=2)
+
     print()
     print("✓ Saved model to model/risk_model.joblib")
     print("✓ Saved feature importance to model/feature_importance.json")
+    print("✓ Saved validation metrics to model/metrics.json")
 
 
 if __name__ == "__main__":

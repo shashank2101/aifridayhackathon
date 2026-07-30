@@ -49,6 +49,12 @@ with st.sidebar:
     st.sidebar.info("The AI reasoning backend is now hardcoded in `graph.py`. Open `graph.py` to comment/uncomment the client you want to use (Ollama is set as the default).")
     
     st.divider()
+    st.sidebar.markdown("### 🎛️ Pipeline Tuning")
+    risk_thresh = st.slider("LLM Routing Threshold", min_value=0.1, max_value=0.9, value=0.5, step=0.05,
+                            help="Only batches with risk >= this threshold will trigger the LLM reasoning agent.")
+    os.environ["RISK_THRESHOLD"] = str(risk_thresh)
+    
+    st.divider()
     auto_refresh = st.toggle("Enable auto-refresh", value=True, help="Disable this while chatting to prevent interruptions.")
     refresh_seconds = st.slider("Auto-refresh interval (seconds)", 3, 30, 5, disabled=not auto_refresh)
     st.info("Open the **Producer** page (left sidebar) to push new batches.")
@@ -190,7 +196,7 @@ if len(alerts_df):
                         with st.spinner("Re-running AI Analysis..."):
                             from graph import process_batch
                             # Get original data
-                            queue_df = pd.read_csv("data/live_queue.csv")
+                            queue_df = pd.read_csv(QUEUE_PATH)
                             id_col = "Product ID" if "Product ID" in queue_df.columns else "batch_id"
                             batch_data = queue_df[queue_df[id_col] == selected].iloc[0].to_dict()
                             

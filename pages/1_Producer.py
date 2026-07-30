@@ -90,7 +90,8 @@ with reset_col:
     if st.button("🔄 Reset simulation"):
         for fpath in [QUEUE_PATH,
                       os.path.join(DATA_DIR, ".processed_batch_ids.txt"),
-                      os.path.join(DATA_DIR, "alerts.csv")]:
+                      os.path.join(DATA_DIR, "alerts.csv"),
+                      os.path.join(DATA_DIR, "feedback.csv")]:
             if os.path.exists(fpath):
                 os.remove(fpath)
         st.session_state.pushed_count = 0
