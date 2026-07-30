@@ -14,7 +14,10 @@ import pandas as pd
 import streamlit as st
 
 from graph import process_batch
+import sys
+import os
 
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "packages"))
 st.set_page_config(
     page_title="AI Manufacturing Defect Prediction",
     page_icon="🏭",
