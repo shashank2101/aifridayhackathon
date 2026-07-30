@@ -1,0 +1,11 @@
+{
+  "power_W": 0.334,
+  "Tool wear [min]": 0.2367,
+  "Torque [Nm]": 0.1264,
+  "temp_diff": 0.0965,
+  "overstrain_product": 0.0757,
+  "Rotational speed [rpm]": 0.0643,
+  "torque_speed_ratio": 0.0437,
+  "Process temperature [K]": 0.0134,
+  "Air temperature [K]": 0.0094
+}

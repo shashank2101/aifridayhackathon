@@ -1,0 +1,27 @@
+{
+  "Air temperature [K]": {
+    "low": 295.0,
+    "high": 305.0,
+    "unit": "K"
+  },
+  "Process temperature [K]": {
+    "low": 305.0,
+    "high": 315.0,
+    "unit": "K"
+  },
+  "Rotational speed [rpm]": {
+    "low": 1168,
+    "high": 2886,
+    "unit": "rpm"
+  },
+  "Torque [Nm]": {
+    "low": 3.8,
+    "high": 76.2,
+    "unit": "Nm"
+  },
+  "Tool wear [min]": {
+    "low": 0,
+    "high": 240,
+    "unit": "min"
+  }
+}

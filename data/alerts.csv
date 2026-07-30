@@ -1,0 +1,15 @@
+batch_id,timestamp,machine_id,product_type,risk_score,risk_level,air_temp_K,process_temp_K,rpm,torque_Nm,tool_wear_min,power_W,temp_diff,deviated_params,probable_cause,recommended_action,confidence,needs_human_review
+H08001,2026-07-29T06:00:00,LINE2-M02,H,0.002,Low,298.7,309.4,1474,40.4,5,6236.0,10.7,,,,,False
+H08002,2026-07-29T06:04:00,LINE2-M02,H,0.0,Low,303.1,312.9,1552,42.3,10,6874.8,9.8,,,,,False
+M08003,2026-07-29T06:09:00,LINE1-M02,M,0.995,High,300.9,310.3,1413,19.8,13,2929.8,9.4,,"The high risk score and deviated parameters indicate that the machine is experiencing overheating due to inadequate heat dissipation, possibly leading to a Heat Dissipation Failure (HDF). The tool wear factor also suggests that the excessive temperatures may be affecting the tool's lifespan.",Check and adjust the cooling system to ensure proper airflow and temperature regulation.,High,False
+H08004,2026-07-29T06:13:00,LINE3-M01,H,0.0,Low,299.3,309.9,1423,42.9,18,6392.8,10.6,,,,,False
+L08005,2026-07-29T06:15:00,LINE3-M01,L,0.005,Low,304.0,313.9,1583,51.4,20,8520.6,9.9,,,,,False
+M08006,2026-07-29T06:18:00,LINE2-M01,M,0.002,Low,300.1,310.2,1839,27.8,23,5353.7,10.1,,,,,False
+M08003,2026-07-29T06:09:00,LINE1-M02,M,0.995,High,300.9,310.3,1413,19.8,13,2929.8,9.4,,The high risk score indicates a probable Overstrain Failure (OSF) due to excessive tool wear and torque. This is because the computed indicator overstrain_product exceeds the threshold.,Check the tool wear regularly and replace it every 200 minutes as per the maintenance schedule.,High,False
+H08004,2026-07-29T06:13:00,LINE3-M01,H,0.0,Low,299.3,309.9,1423,42.9,18,6392.8,10.6,,,,,False
+L08005,2026-07-29T06:15:00,LINE3-M01,L,0.005,Low,304.0,313.9,1583,51.4,20,8520.6,9.9,,,,,False
+M08006,2026-07-29T06:18:00,LINE2-M01,M,0.002,Low,300.1,310.2,1839,27.8,23,5353.7,10.1,,,,,False
+L08007,2026-07-29T06:23:00,LINE3-M01,L,0.996,High,302.4,310.5,1876,53.2,25,10451.4,8.1,,"The high risk score is likely due to a combination of factors including tool wear and overstrain, which could indicate an impending Tool Wear Failure (TWF) or Overstrain Failure (OSF). The temperature differential is also slightly above the threshold.",Check the tool wear every 10 minutes and replace it as soon as it reaches 200-240 minutes to prevent TWF.,High,False
+H08008,2026-07-29T06:25:00,LINE2-M01,H,0.03,Low,296.7,306.1,1535,54.0,30,8680.2,9.4,,,,,False
+L08007,2026-07-29T06:23:00,LINE3-M01,L,0.996,High,302.4,310.5,1876,53.2,25,10451.4,8.1,,The high risk score and deviated parameters suggest that the machine is experiencing a combination of overheating (HDF) and overstrain due to excessive tool wear and torque. This indicates a possible Tool Wear Failure (TWF).,"Check and adjust the tool wear time limits, ensuring that the current 25-minute limit does not contribute to overstrain.",High,False
+H08008,2026-07-29T06:25:00,LINE2-M01,H,0.03,Low,296.7,306.1,1535,54.0,30,8680.2,9.4,,,,,False
