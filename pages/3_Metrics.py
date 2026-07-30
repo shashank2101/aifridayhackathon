@@ -3,7 +3,10 @@ Metrics & ROI Dashboard — The explicit "Success Metrics" required by the judge
 Shows model performance, projected defect reduction (ROI), and user engagement.
 """
 
+import sys
 import os
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "packages"))
+
 import json
 import pandas as pd
 import numpy as np

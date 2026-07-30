@@ -6,7 +6,10 @@ shared live queue, as if new production had just come off the line.
 Aligned to AI4I 2020 Predictive Maintenance Dataset standard.
 """
 
+import sys
 import os
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "packages"))
+
 import pandas as pd
 import streamlit as st
 

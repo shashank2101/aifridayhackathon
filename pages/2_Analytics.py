@@ -4,7 +4,10 @@ Shows defect trends, severity distribution, repair costs, and failure mode
 breakdowns. This is the "quality analytics" panel from the 3-dataset flow.
 """
 
+import sys
 import os
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "packages"))
+
 import pandas as pd
 import streamlit as st
 

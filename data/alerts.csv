@@ -13,3 +13,13 @@ L08007,2026-07-29T06:23:00,LINE3-M01,L,0.996,High,302.4,310.5,1876,53.2,25,10451
 H08008,2026-07-29T06:25:00,LINE2-M01,H,0.03,Low,296.7,306.1,1535,54.0,30,8680.2,9.4,,,,,False
 L08007,2026-07-29T06:23:00,LINE3-M01,L,0.996,High,302.4,310.5,1876,53.2,25,10451.4,8.1,,The high risk score and deviated parameters suggest that the machine is experiencing a combination of overheating (HDF) and overstrain due to excessive tool wear and torque. This indicates a possible Tool Wear Failure (TWF).,"Check and adjust the tool wear time limits, ensuring that the current 25-minute limit does not contribute to overstrain.",High,False
 H08008,2026-07-29T06:25:00,LINE2-M01,H,0.03,Low,296.7,306.1,1535,54.0,30,8680.2,9.4,,,,,False
+H08009,2026-07-29T06:31:00,LINE3-M01,H,0.002,Low,296.7,305.9,1607,36.2,35,6091.9,9.2,,,,,False
+H08010,2026-07-29T06:36:00,LINE3-M02,H,0.958,High,295.9,303.9,1236,49.4,40,6394.0,8.0,Process temperature [K],Reasoning call failed (RBAC: access denied). Falling back to rule-based note: deviated parameters were ['Process temperature [K]'].,Review batch manually.,Low,False
+H08011,2026-07-29T06:40:00,LINE3-M02,H,0.0,Low,299.2,310.1,1514,40.6,45,6437.0,10.9,,,,,False
+M08012,2026-07-29T06:42:00,LINE3-M02,M,0.032,Low,299.7,308.3,1448,45.6,48,6914.5,8.6,,,,,False
+M08013,2026-07-29T06:45:00,LINE3-M01,M,0.005,Low,301.0,313.5,1375,42.6,51,6134.0,12.5,,,,,False
+M08014,2026-07-29T06:47:00,LINE3-M02,M,0.005,Low,300.9,311.5,1275,50.0,54,6675.9,10.6,,,,,False
+L08015,2026-07-29T06:49:00,LINE3-M01,L,0.101,Low,300.5,311.0,1276,27.0,56,3607.8,10.5,,,,,False
+M08016,2026-07-29T06:51:00,LINE1-M01,M,0.0,Low,301.6,312.3,1535,41.1,59,6606.6,10.7,,,,,False
+H08017,2026-07-29T06:54:00,LINE3-M02,H,0.109,Low,300.4,311.2,2262,17.2,64,4074.3,10.8,,,,,False
+M08018,2026-07-29T06:58:00,LINE2-M01,M,0.007,Low,300.0,311.8,1353,55.1,67,7806.9,11.8,,,,,False
